@@ -3,7 +3,7 @@ package lambdas;
 import java.util.List;
 import static java.util.Arrays.asList;
 
-public class ForeachLambda {
+public class ForeachLambda1 {
     public static void main(String[] args) {
         List<String> aprovados = asList("Ana", "Lia", "Bia", "Gui");
 
