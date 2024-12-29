@@ -32,6 +32,6 @@ public class ImprimirObjetos {
         // Usando o Stream
         System.out.println("\nCom Stream:");
         Stream<String> st = aprovados.stream();
-        aprovados.forEach(System.out::println);
+        st.forEach(System.out::println);
     }
 }
