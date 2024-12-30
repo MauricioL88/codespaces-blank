@@ -20,9 +20,25 @@ public class FuncaoMap {
         // Composição de interfaces funcionais:
 
         // Recebe um tipo e retorna o mesmo tipo de dados
-        UnaryOperator<String> maiuscula = n -> n.toUpperCase();
-        UnaryOperator<String> primeiraLetra = n -> n.charAt(0) + "";
-        UnaryOperator<String> gritando = n -> n + "!!!!";
+//        UnaryOperator<String> maiuscula = n -> n.toUpperCase();
+//        UnaryOperator<String> primeiraLetra = n -> n.charAt(0) + "";
+//        UnaryOperator<String> gritando = n -> n + "!!!! ";
+
+        // Composição:
+        System.out.println(
+                Utilitarios.maiuscula
+                        .andThen(Utilitarios.primeiraLetra)
+                        .andThen(Utilitarios.gritando)
+                        .apply("BMW")
+        );
+
+        // Usando composição com Stream
+        System.out.println("\nComposição com Stream:");
+        marcas.stream()
+                .map(Utilitarios.maiuscula)
+                .map(Utilitarios.primeiraLetra)
+                .map(Utilitarios.gritando)
+                .forEach(print);
 
     }
 }
